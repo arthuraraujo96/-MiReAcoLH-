@@ -2,86 +2,118 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>#MiReAcoLH! – Migração, Refúgio e Acolhimento</title>
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <title>A.Co.LH.I.A – Acolhimento Cultural</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonte e Ícones -->
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e8a20e6e.js" crossorigin="anonymous"></script>
+
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     body {
-      font-family: 'Ubuntu', sans-serif;
-      color: #333;
-      background-image: url('https://images.unsplash.com/photo-1533674689012-9c56175cb261?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
-      background-size: cover;
-      background-position: center;
+      font-family: 'Comfortaa', cursive;
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      backdrop-filter: blur(4px);
+      color: #333;
+      overflow: hidden;
     }
 
-    .container {
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
       text-align: center;
-      max-width: 700px;
+      padding: 50px 30px;
+      max-width: 800px;
       width: 90%;
+      animation: fadeIn 1.5s ease;
     }
 
     h1 {
-      font-size: 2.5rem;
-      color: #3b3b3b;
-      margin-bottom: 20px;
+      font-size: 2.8rem;
+      color: #444;
+      margin-bottom: 10px;
     }
 
-    p {
-      font-size: 1.2rem;
+    .subtitle {
+      font-size: 1.1rem;
+      color: #666;
       margin-bottom: 30px;
-      color: #555;
+    }
+
+    .icon {
+      font-size: 3rem;
+      color: #ff7043;
+      margin-bottom: 20px;
+      animation: bounce 2s infinite;
     }
 
     .chat-btn {
-      background: linear-gradient(to right, #ff5c5c, #ffa64d);
-      border: none;
+      background: #ff7043;
       color: white;
-      font-size: 1rem;
+      border: none;
       padding: 14px 28px;
       border-radius: 30px;
+      font-size: 1rem;
       cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      transition: all 0.3s ease;
+      transition: background 0.3s ease, transform 0.2s;
     }
 
     .chat-btn:hover {
+      background: #ff5722;
       transform: scale(1.05);
-      background: linear-gradient(to right, #ff4040, #ff9933);
     }
 
     footer {
       margin-top: 30px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: #777;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .chat-btn {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Bem-vindo(a) ao <strong>A.Co.LH.I.A</strong></h1>
-    <p>Atendente Colaborativa de Linguagens Humanas e Integração Assistida do #MiReAcoLH!</p>
-    <button class="chat-btn" onclick="openChat()">Fale com nossa Atendente Virtual - A.Co.LH.I.A </button>
-
+  <div class="card">
+    <div class="icon"><i class="fas fa-hands-helping"></i></div>
+    <h1>Bem-vindo(a) à <strong>A.Co.LH.I.A</strong></h1>
+    <p class="subtitle">Atendente Colaborativa de Linguagem Humana e Integração Assistida <br><strong></strong></p>
+    <button class="chat-btn" onclick="openChat()">
+      <i class="fas fa-comments"></i> Fale com a A.Co.LH.I.A
+    </button>
     <footer>
-      <p>Atendente Colaborativa de Linguagens Humanas e Integração Assistida do #MiReAcoLH!</p>
+      <p>Migração, Refúgio e Acolhimento - #MiReAcoLH! 🌎🤝</p>
     </footer>
   </div>
 
-  <!-- Tawk.to Script -->
+  <!-- Tawk.to Chat Script -->
   <script type="text/javascript">
     function openChat() {
       Tawk_API.maximize();
