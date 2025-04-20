@@ -2,52 +2,59 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>A.Co.LH.I.A – Acolhimento Cultural</title>
+  <title>#MiReAcoLH! – Acolhimento Cultural</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Fonte e Ícones -->
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a2e8a20e6e.js" crossorigin="anonymous"></script>
 
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      font-family: 'Comfortaa', cursive;
-      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-      height: 100vh;
+      font-family: 'Ubuntu', sans-serif;
+      background: linear-gradient(to right, #f8f9fa, #e3f2fd);
+      background-image: url('https://images.unsplash.com/photo-1533674689012-9c56175cb261?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+      background-size: cover;
+      background-position: center;
+      backdrop-filter: blur(5px);
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #333;
-      overflow: hidden;
+      min-height: 100vh;
+      padding: 20px;
     }
 
-    .card {
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-      text-align: center;
-      padding: 50px 30px;
+    .container {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 24px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+      padding: 50px 40px;
       max-width: 800px;
-      width: 90%;
+      width: 100%;
+      text-align: center;
       animation: fadeIn 1.5s ease;
     }
 
     h1 {
       font-size: 2.8rem;
-      color: #444;
-      margin-bottom: 10px;
+      color: #333;
+      margin-bottom: 20px;
     }
 
-    .subtitle {
-      font-size: 1.1rem;
-      color: #666;
-      margin-bottom: 30px;
+    h1 strong {
+      color: #e65100;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 35px;
     }
 
     .icon {
@@ -58,35 +65,46 @@
     }
 
     .chat-btn {
-      background: #ff7043;
-      color: white;
+      background: linear-gradient(to right, #ff7043, #ffb347);
       border: none;
-      padding: 14px 28px;
-      border-radius: 30px;
+      color: white;
       font-size: 1rem;
+      padding: 15px 30px;
+      border-radius: 40px;
       cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
     }
 
     .chat-btn:hover {
-      background: #ff5722;
+      background: linear-gradient(to right, #ff5722, #ff9800);
       transform: scale(1.05);
     }
 
     footer {
       margin-top: 30px;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: #777;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
     }
 
     @media (max-width: 600px) {
@@ -94,87 +112,44 @@
         font-size: 2rem;
       }
 
+      p {
+        font-size: 1rem;
+      }
+
       .chat-btn {
         width: 100%;
       }
     }
-
-    /* Modal Estilo */
-    #chatModal {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      background-color: rgba(0, 0, 0, 0.6);
-    }
-
-    .modal-content {
-      position: relative;
-      margin: 5% auto;
-      width: 90%;
-      max-width: 900px;
-      height: 85%;
-      background-color: #fff;
-      border-radius: 16px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      overflow: hidden;
-    }
-
-    .modal-content iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      background: #ff7043;
-      color: white;
-      border: none;
-      font-size: 20px;
-      border-radius: 50%;
-      width: 35px;
-      height: 35px;
-      cursor: pointer;
-      z-index: 1001;
-    }
   </style>
 </head>
 <body>
-  <div class="card">
-    <div class="icon"><i class="fas fa-hands-helping"></i></div>
+  <div class="container">
+    <div class="icon"><i class="fas fa-globe-americas"></i></div>
     <h1>Bem-vindo(a) à <strong>A.Co.LH.I.A</strong></h1>
-    <p class="subtitle">Atendente Colaborativa de Linguagem Humana e Integração Assistida</p>
+    <p>Atendente Colaborativa de Linguagens Humanas e Integração Assistida.</p>
     <button class="chat-btn" onclick="openChat()">
-      <i class="fas fa-comments"></i> Fale com a A.Co.LH.I.A
+      <i class="fas fa-comments"></i> Fale com nossa Atendente A.Co.LH.I.A
     </button>
     <footer>
-      <p>Migração, Refúgio e Acolhimento - #MiReAcoLH! 🌎🤝</p>
+      <p>#MiReACoLH! 🌎✨</p>
     </footer>
   </div>
 
-  <!-- Modal com Chatbot -->
-  <div id="chatModal">
-    <div class="modal-content">
-      <button class="close-btn" onclick="closeChat()">&times;</button>
-      <iframe src="https://arthuraraujo96.github.io/-MiReAcoLH-/"></iframe>
-    </div>
-  </div>
-
-  <script>
+  <!-- Tawk.to Script -->
+  <script type="text/javascript">
     function openChat() {
-      document.getElementById("chatModal").style.display = "block";
+      Tawk_API.maximize();
     }
 
-    function closeChat() {
-      document.getElementById("chatModal").style.display = "none";
-    }
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/68044198870f281910a13878/1ip8a0emc';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
   </script>
 </body>
 </html>
