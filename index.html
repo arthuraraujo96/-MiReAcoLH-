@@ -10,50 +10,96 @@
   <script src="https://kit.fontawesome.com/a2e8a20e6e.js" crossorigin="anonymous"></script>
 
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: 'Comfortaa', cursive;
       background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
       height: 100vh;
-      margin: 0;
       display: flex;
       justify-content: center;
       align-items: center;
+      color: #333;
+      overflow: hidden;
     }
 
     .card {
-      background: white;
-      padding: 40px;
+      background: rgba(255, 255, 255, 0.9);
       border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
       text-align: center;
-      max-width: 500px;
+      padding: 50px 30px;
+      max-width: 800px;
       width: 90%;
+      animation: fadeIn 1.5s ease;
     }
 
-    .card h1 {
+    h1 {
+      font-size: 2.8rem;
+      color: #444;
       margin-bottom: 10px;
     }
 
-    .card p {
+    .subtitle {
+      font-size: 1.1rem;
       color: #666;
       margin-bottom: 30px;
     }
 
+    .icon {
+      font-size: 3rem;
+      color: #ff7043;
+      margin-bottom: 20px;
+      animation: bounce 2s infinite;
+    }
+
     .chat-btn {
-      background-color: #ff7043;
+      background: #ff7043;
       color: white;
       border: none;
-      padding: 15px 25px;
-      font-size: 16px;
+      padding: 14px 28px;
       border-radius: 30px;
+      font-size: 1rem;
       cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s;
     }
 
     .chat-btn:hover {
-      background-color: #e64a19;
+      background: #ff5722;
+      transform: scale(1.05);
     }
 
-    /* Modal estilo */
+    footer {
+      margin-top: 30px;
+      font-size: 0.85rem;
+      color: #777;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .chat-btn {
+        width: 100%;
+      }
+    }
+
+    /* Modal Estilo */
     #chatModal {
       display: none;
       position: fixed;
@@ -70,8 +116,8 @@
       position: relative;
       margin: 5% auto;
       width: 90%;
-      max-width: 800px;
-      height: 80%;
+      max-width: 900px;
+      height: 85%;
       background-color: #fff;
       border-radius: 16px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.3);
@@ -101,14 +147,19 @@
   </style>
 </head>
 <body>
-
   <div class="card">
-    <h1><i class="fas fa-hands-helping"></i> A.Co.LH.I.A</h1>
-    <p>Atendente Colaborativa de Linguagem Humana e Integração Assistida</p>
-    <button class="chat-btn" onclick="openChat()">Fale com a A.Co.LH.I.A</button>
+    <div class="icon"><i class="fas fa-hands-helping"></i></div>
+    <h1>Bem-vindo(a) à <strong>A.Co.LH.I.A</strong></h1>
+    <p class="subtitle">Atendente Colaborativa de Linguagem Humana e Integração Assistida</p>
+    <button class="chat-btn" onclick="openChat()">
+      <i class="fas fa-comments"></i> Fale com a A.Co.LH.I.A
+    </button>
+    <footer>
+      <p>Migração, Refúgio e Acolhimento - #MiReAcoLH! 🌎🤝</p>
+    </footer>
   </div>
 
-  <!-- Modal -->
+  <!-- Modal com Chatbot -->
   <div id="chatModal">
     <div class="modal-content">
       <button class="close-btn" onclick="closeChat()">&times;</button>
@@ -125,6 +176,5 @@
       document.getElementById("chatModal").style.display = "none";
     }
   </script>
-
 </body>
 </html>
