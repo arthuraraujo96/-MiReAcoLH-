@@ -2,21 +2,64 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Chat</title>
+  <title>#MiReACoLH! – Atendente Virtual</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #e8f0fe;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #abrirChat {
+      background-color: #0066cc;
+      color: white;
+      padding: 16px 32px;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #abrirChat:hover {
+      background-color: #004999;
+    }
+  </style>
 </head>
 <body>
+
+  <button id="abrirChat">Falar com a #MiReACoLH!</button>
+
   <!--Start of Tawk.to Script-->
   <script type="text/javascript">
-  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-  (function(){
-  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-  s1.async=true;
-  s1.src='https://embed.tawk.to/68044198870f281910a13878/1ip8a0emc';
-  s1.charset='UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
-  })();
+    var Tawk_API = Tawk_API || {};
+    var Tawk_LoadStart = new Date();
+
+    (function () {
+      var s1 = document.createElement("script");
+      var s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/68044198870f281910a13878/1ip8a0emc';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+
+    // Aguarda o carregamento do chat para abrir ao clicar no botão
+    window.onload = function () {
+      document.getElementById("abrirChat").addEventListener("click", function () {
+        if (typeof Tawk_API !== 'undefined') {
+          Tawk_API.maximize(); // Abre o chat
+        }
+      });
+    };
   </script>
   <!--End of Tawk.to Script-->
+
 </body>
 </html>
+
