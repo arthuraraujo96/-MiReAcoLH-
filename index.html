@@ -2,64 +2,79 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>#MiReACoLH! – Atendente Virtual</title>
+  <title>#MiReAcoLH! - Atendente Virtual</title>
   <style>
     body {
       margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
       font-family: Arial, sans-serif;
-      background-color: #e8f0fe;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
     }
 
-    #abrirChat {
-      background-color: #0066cc;
-      color: white;
-      padding: 16px 32px;
-      border: none;
-      border-radius: 12px;
+    .container {
+      text-align: center;
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      max-width: 600px;
+      width: 90%;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    p {
       font-size: 1.2rem;
-      cursor: pointer;
-      transition: background-color 0.3s;
+      color: #555;
+      margin-bottom: 20px;
     }
 
-    #abrirChat:hover {
-      background-color: #004999;
+    .chat-btn {
+      background-color: #0077cc;
+      color: #fff;
+      padding: 15px 30px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .chat-btn:hover {
+      background-color: #005fa3;
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <h1>Bem-vindo(a) ao #MiReAcoLH!</h1>
+    <p>Nosso atendente virtual está pronto para te apoiar em Porto Alegre.</p>
+    <button class="chat-btn" onclick="openChat()">Fale com o atendente virtual</button>
+  </div>
 
-  <button id="abrirChat">Falar com a #MiReACoLH!</button>
-
-  <!--Start of Tawk.to Script-->
+  <!-- Tawk.to Script -->
   <script type="text/javascript">
-    var Tawk_API = Tawk_API || {};
-    var Tawk_LoadStart = new Date();
+    function openChat() {
+      Tawk_API.maximize(); // abre o chat ao clicar no botão
+    }
 
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     (function () {
-      var s1 = document.createElement("script");
-      var s0 = document.getElementsByTagName("script")[0];
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
       s1.async = true;
       s1.src = 'https://embed.tawk.to/68044198870f281910a13878/1ip8a0emc';
       s1.charset = 'UTF-8';
       s1.setAttribute('crossorigin', '*');
       s0.parentNode.insertBefore(s1, s0);
     })();
-
-    // Aguarda o carregamento do chat para abrir ao clicar no botão
-    window.onload = function () {
-      document.getElementById("abrirChat").addEventListener("click", function () {
-        if (typeof Tawk_API !== 'undefined') {
-          Tawk_API.maximize(); // Abre o chat
-        }
-      });
-    };
   </script>
-  <!--End of Tawk.to Script-->
-
 </body>
 </html>
-
