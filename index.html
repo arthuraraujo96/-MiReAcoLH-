@@ -2,68 +2,89 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>#MiReAcoLH! - Atendente Virtual</title>
+  <title>#MiReAcoLH! – Acolhimento Cultural</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
-      background-color: #f0f0f0;
-      font-family: Arial, sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Ubuntu', sans-serif;
+      color: #333;
+      background-image: url('https://images.unsplash.com/photo-1533674689012-9c56175cb261?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+      background-size: cover;
+      background-position: center;
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
+      backdrop-filter: blur(4px);
     }
 
     .container {
-      text-align: center;
-      background: #fff;
+      background-color: rgba(255, 255, 255, 0.9);
       padding: 40px;
-      border-radius: 20px;
+      border-radius: 16px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-      max-width: 600px;
+      text-align: center;
+      max-width: 700px;
       width: 90%;
     }
 
     h1 {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
+      color: #3b3b3b;
       margin-bottom: 20px;
-      color: #333;
     }
 
     p {
       font-size: 1.2rem;
+      margin-bottom: 30px;
       color: #555;
-      margin-bottom: 20px;
     }
 
     .chat-btn {
-      background-color: #0077cc;
-      color: #fff;
-      padding: 15px 30px;
-      font-size: 1rem;
+      background: linear-gradient(to right, #ff5c5c, #ffa64d);
       border: none;
-      border-radius: 8px;
+      color: white;
+      font-size: 1rem;
+      padding: 14px 28px;
+      border-radius: 30px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
     }
 
     .chat-btn:hover {
-      background-color: #005fa3;
+      transform: scale(1.05);
+      background: linear-gradient(to right, #ff4040, #ff9933);
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #777;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Bem-vindo(a) ao #MiReAcoLH!</h1>
-    <p>Nosso atendente virtual está pronto para te apoiar em Porto Alegre.</p>
-    <button class="chat-btn" onclick="openChat()">Fale com o atendente virtual</button>
+    <h1>Bem-vindo ao <strong>#MiReAcoLH!</strong></h1>
+    <p>Um espaço de acolhimento, apoio cultural e social para migrantes e refugiados em Porto Alegre.</p>
+    <button class="chat-btn" onclick="openChat()">Fale com nosso Atendente Virtual</button>
+
+    <footer>
+      <p>Projeto voltado ao fortalecimento da integração cultural e social no Brasil</p>
+    </footer>
   </div>
 
   <!-- Tawk.to Script -->
   <script type="text/javascript">
     function openChat() {
-      Tawk_API.maximize(); // abre o chat ao clicar no botão
+      Tawk_API.maximize();
     }
 
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
